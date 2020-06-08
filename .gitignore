@@ -1,0 +1,12 @@
+#Folders.:
+.pytest*
+env
+.env
+.key*
+*_pycache_*
+build
+carteiropy.egg*
+
+# Extensions
+*.tar.gz
+*.whl
