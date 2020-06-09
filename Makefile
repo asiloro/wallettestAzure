@@ -21,11 +21,12 @@ run-code: build
 run-test:
 	@echo "Testing the code in this folder ..."
 	docker run --rm -v $$(pwd):/app -w /app --name ${APP_NAME} ${APP_NAME} pytest
-# Debug.:
 
+# Debug.:
 bash: build
 	@echo "Open bash"
 	docker run -it --rm -v $$(pwd):/app -w /app  --name ${APP_NAME} ${APP_NAME} sh
+
 
 venv:
 	@echo "Open python venv"
