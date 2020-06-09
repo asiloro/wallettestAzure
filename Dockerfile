@@ -12,13 +12,14 @@ RUN apk add --no-cache gcc \
 
 # APP Install Requirements
 
-COPY requirements.txt /tmp
-COPY ./code /usr/local/scr/${APP_NAME}
+COPY . /tmp/${APP_NAME}
 
-RUN pip install -r /tmp/requirements.txt \
-    && rm /tmp/requirements.txt
+WORKDIR /tmp/${APP_NAME}
+
+RUN pip install -r requirements.txt \
+    && pip install -e .
 
 # App Configurations
 
- USER 1000:1000
- WORKDIR /usr/local/scr/${APP_NAME}
+USER 1000:1000
+ENTRYPOINT [ "pytest" ]
