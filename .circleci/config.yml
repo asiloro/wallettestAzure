@@ -12,7 +12,7 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: pipenv run python test/carteiropy/test_calculadora.py
+          command: ./manage.py
           name: Test
 
 workflows:
